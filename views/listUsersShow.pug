@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+     h2 list of users
+     -          for(var prop in users)
+                    div #{prop}: #{users[prop]} 
+                            block content

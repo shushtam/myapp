@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    h2 hi
+    ul
+        li 1
+        li 25
+        li 3
+    -for(var x=0;x<4;x++)
+     li item
+    div
+     a(href='/') go back
+    block content

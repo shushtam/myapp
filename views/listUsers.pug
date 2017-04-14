@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    style.
+        div.user {
+            background-color: rgb(200,120,100);
+            width:25%;
+        }
+  body
+    h2 list of users
+    each user in users
+        div #{user.name} 
+            a(href='listUsers/'+user.id) edit
+
+    a(href='/') go back
+    block content
