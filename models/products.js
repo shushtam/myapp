@@ -1,7 +1,7 @@
 /* jshint indent: 2 */
 
 module.exports = function(sequelize, DataTypes) {
-  return sequelize.define('products', {
+  var products=sequelize.define('products', {
     id: {
       type: DataTypes.INTEGER(10).UNSIGNED,
       allowNull: false,
@@ -25,6 +25,16 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: true
     }
   }, {
-    tableName: 'products'
+    tableName: 'products',
+    timestamps:false,
+    
+     classMethods: {
+            associate: function (models) {
+               products.belongsTo(models.users,
+               {foreignKey:'user_id'})
+                       
+            }
+        }
   });
+  return products;
 };

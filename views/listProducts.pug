@@ -3,18 +3,18 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    include list.html
     style.
         div.user {
             background-color: rgb(200,120,100);
             width:25%;
         }
   body
-    h2 list of users
-    each user in users
-        div #{user.name} 
-            a(href='listUsers/'+user.id) show
-            a(href='listUsers/edit/'+user.id) edit
+    h2 list of products
+    each product in products
+        div #{product.name} 
+            a(href='listProducts/'+product.id) edit
 
     a(href='/') go back
     block content
+
+

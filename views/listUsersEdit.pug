@@ -1,0 +1,21 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  style.
+        div.user {
+            background-color: rgb(200,120,100);
+            width:25%;
+        }
+  body
+     h2 User details
+     form(name="form1", method="post")
+          div
+            input(type='text',value=''+users.name,name='name')
+          div
+            input(type="text",value=''+users.email,name='email')
+          div
+            input(type="submit", value='ok')
+            hr
+            

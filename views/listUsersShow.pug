@@ -3,8 +3,18 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+  style.
+        div.user {
+            background-color: rgb(200,120,100);
+            width:25%;
+        }
   body
-     h2 list of users
-     -          for(var prop in users)
-                    div #{prop}: #{users[prop]} 
-                            block content
+     h2 User details
+         div.user name: #{users.name}
+         div email: #{users.email}
+         div role: #{users.role}
+         hr
+         h2 Products
+         each val, index  in users.products
+              li= 'product id is '+index + ': ' + 'product name is '+users.products[index].name
+                               block content

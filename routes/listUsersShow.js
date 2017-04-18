@@ -1,12 +1,12 @@
 var express = require('express');
+var models = require('../models');
 var router = express.Router();
 
 /* GET home page. */
-router.get('/listUsers/:id', function(req, res, next) {
-
-        console.log(req.params);
-    //res.render('hello', { title: 'Express' });
-  res.send("xx");
+router.get('/', function(req, res, next) {
+    console.log(id);
+        /*var users=models.users.findOne({where:{id:req.params.id}}).then(function(users){
+    res.render('listUsersShow', { title: 'listUsers',users:users.dataValues})});*/
 });
 
 module.exports = router;

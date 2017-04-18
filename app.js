@@ -11,6 +11,7 @@ var users = require('./routes/users');
 var hello = require('./routes/hello');
 var listUsers = require('./routes/listUsers');
 var listUsersShow = require('./routes/listUsersShow');
+var listProducts = require('./routes/listProducts');
 
 var app = express();
 
@@ -31,12 +32,7 @@ app.use('/', index);
 app.use('/users', users);
 app.use('/hello', hello);
 app.use('/listUsers', listUsers);
-app.use('/listUsers/:id', function(req, res, next) {
-     var users=models.users.findOne({where:{id:req.params.id}}).then(function(users){
-    res.render('listUsersShow', { title: 'listUsers',users:users.dataValues})});
-
-
-});
+app.use('/listProducts', listProducts);
 
 
 // catch 404 and forward to error handler
