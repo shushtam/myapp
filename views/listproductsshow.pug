@@ -1,0 +1,36 @@
+extends layout
+
+block content
+
+    head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    style.
+        div.user {
+            background-color: rgb(200, 120, 100);
+            width: 25%;
+        }
+
+        h3 {
+            color: maroon;
+        }
+
+        span {
+            color: darkolivegreen;
+            padding-left: 50px;
+        }
+
+
+    .container
+        .row
+            .col-md-2
+            .col-md-8
+                .panel.panel-success
+                    .panel-heading
+                        h2 product details
+                    .panel-body
+                        h3 name
+                            span #{products.name}
+                        h3 date
+                            span #{products.updated_at}
+                        hr

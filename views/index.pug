@@ -1,13 +1,28 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
-  div
-    a(href='hello') hello
-  div
-  a(href='users') users
-  div
-  a(href='listUsers') listUsers
-  div
-  a(href='listProducts') listProducts
+    style.
+        div.links a {
+            width: 100px;
+        }
+        div.links {
+            margin:20px;
+        }
+    .container
+        .row
+            .col-md-2
+            .col-md-8
+                h1= title
+                p Welcome to #{title}
+                div.links
+                    a(href='hello') hello
+                div.links
+                    a.btn.btn-success(href='listusers') Users
+                div.links
+                    a.btn.btn-primary(href='listproducts') Products
+                div.links
+                    a.btn.btn-primary(href='login') Login
+                div.links
+                    a.btn.btn-primary(href='signup') Signup
+                div.links
+                    a.btn.btn-danger(href='check') Check

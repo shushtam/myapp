@@ -44,7 +44,8 @@ module.exports = function (sequelize, DataTypes) {
         underscored: true,
         classMethods: {
             associate: function (models) {
-                users.hasMany(models.products)
+                users.hasMany(models.products),
+                    users.hasMany(models.Newproducts)
             }
         }
     });

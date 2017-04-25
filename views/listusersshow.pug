@@ -1,0 +1,58 @@
+extends layout
+
+block content
+
+    head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    style.
+        div.user {
+            background-color: rgb(200, 120, 100);
+            width: 25%;
+        }
+
+        h3 {
+            color: maroon;
+        }
+
+        span {
+            color: darkolivegreen;
+            padding-left: 50px;
+        }
+
+
+    .container
+        .row
+            .col-md-2
+            .col-md-8
+                .panel.panel-success
+                    .panel-heading
+                        h2 User details
+                    .panel-body
+                        h3 name
+                            span #{users.name}
+                        h3 email
+                            span #{users.email}
+                        h3 role
+                            span #{users.role}
+                        hr
+                        h2 Products
+                        table.table.table-hover
+                            thead
+                            tr
+                                th Product Number
+                                th Product Name
+                                th Product Quality
+                                th Product Title
+                            tbody
+                            if (users.Newproducts.length != 0)
+                                each val, index  in users.Newproducts
+                                    tr
+                                        td=index
+                                        td=users.Newproducts[index].name
+                                        td=users.Newproducts[index].quality
+                                        td=users.Newproducts[index].title
+                            else
+                                tr
+                                    td No Products
+

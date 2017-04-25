@@ -1,0 +1,27 @@
+extends layout
+
+block content
+  head
+    title= title
+    style.
+        div.user {
+            background-color: rgb(200,120,100);
+            width:25%;
+        }
+  body
+    .container
+      .row
+        .col-md-2
+        .col-md-8
+            h2 list of users
+            table.table.table-striped
+              thead
+                tr
+                  th Name
+                  th Show
+                  th Edit
+              tbody
+              each user in users
+                include list.pug
+
+   

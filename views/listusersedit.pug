@@ -1,0 +1,49 @@
+extends layout
+
+block content
+
+    head
+        title= title
+    style.
+        li {
+            color:lightcoral;
+        }
+    body
+        .container
+            .row
+                .col-md-2
+                .col-md-8
+                    .panel.panel-success
+                        .panel-heading
+                            h2 Change User details
+                        .panel-body
+                            form(name="form1", method="post")
+                                .form-group
+                                    label(for='name') Name:
+                                    input.form-control(type='text', name='name',id='name' value='' + users.name)
+                                    if flash
+                                        ul
+                                        - for (var i = 0; i < flash.messages.length; i++)
+                                                 - for (var key in flash.messages[i])
+                                                        if flash.messages[i][key] == 'name'
+                                                            script.
+                                                                    $("#name").css("border", "1px solid red");
+                                                            li #{flash.messages[i].msg}
+                                .form-group
+                                    label(for='email') Email:
+                                    input.form-control(type='email', name='email',id='email', value='' + users.email)
+                                    if flash
+                                        ul
+                                        - for (var i = 0; i < flash.messages.length; i++)
+                                                - for (var key in flash.messages[i])
+                                                        if flash.messages[i][key] == 'email'
+                                                            script.
+                                                                    $("#email").css("border", "1px solid red");
+                                                            li #{flash.messages[i].msg}
+                                .form-group
+                                    input.btn.btn-success(type='submit', value='ok')
+                                hr
+
+
+
+
